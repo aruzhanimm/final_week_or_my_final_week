@@ -1,0 +1,21 @@
+groups:
+  - name: sre-alerts
+    rules:
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "Service {{ $labels.instance }} is down"
+      - alert: HighGatewayLatency
+        expr: histogram_quantile(0.95, sum(rate(gateway_http_request_duration_seconds_bucket[5m])) by (le)) > 0.2
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "P95 gateway latency above 200ms"
+      - alert: HighGatewayErrorRate
+        expr: (sum(rate(gateway_http_requests_total{status=~"5.."}[5m])) / sum(rate(gateway_http_requests_total[5m]))) > 0.01
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "Gateway error rate above 1%"

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SRE Endterm Microservices</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>SRE Endterm System</h1>
+    <div class="grid">
+      <section>
+        <h2>Auth</h2>
+        <input id="username" value="demo" />
+        <input id="password" value="demo123" type="password" />
+        <button onclick="login()">Login</button>
+      </section>
+      <section>
+        <h2>Products</h2>
+        <button onclick="loadProducts()">Load Products</button>
+        <ul id="products"></ul>
+      </section>
+      <section>
+        <h2>Order</h2>
+        <input id="productId" placeholder="product id" value="1" />
+        <input id="quantity" placeholder="qty" value="1" />
+        <button onclick="createOrder()">Create Order</button>
+      </section>
+      <section>
+        <h2>Payment + Notification</h2>
+        <input id="orderId" placeholder="order id" value="1" />
+        <button onclick="payAndNotify()">Execute</button>
+      </section>
+      <section>
+        <h2>Profile</h2>
+        <input id="profileUserId" value="1" />
+        <button onclick="loadProfile()">Load Profile</button>
+      </section>
+    </div>
+    <pre id="output"></pre>
+    <script src="app.js"></script>
+  </body>
+  </html>

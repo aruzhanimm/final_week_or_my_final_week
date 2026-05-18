@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b6cb09a-24fd-48fd-bf7b-4fc9fc5372df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Assignment6.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/assignment4-incident-report.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/assignment4-postmortem.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/assignment5-terraform-report.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/assignment6-automation-and-capacity.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/deployment-guide.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/nginx/default.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring/alerts.yml" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring/alerts.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring/grafana/dashboards/order-service-dashboard.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring/grafana/provisioning/dashboards/dashboard-provider.yml" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring/grafana/provisioning/dashboards/dashboard-provider.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring/grafana/provisioning/datasources/prometheus.yml" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring/grafana/provisioning/datasources/prometheus.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring/prometheus.yml" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring/prometheus.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-terraform-key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/grafana dashboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/prometheus targets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/running containers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/working app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/inspect-log-patterns.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/inspect-log-patterns.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/load-test.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/load-test.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/validate-config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate-config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/api-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/api-gateway/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/api-gateway/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth-service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth-service/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/chat-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/chat-service/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/chat-service/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/order-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/order-service/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/order-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/.terraform.lock.hcl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/terraform.tfvars" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/terraform.tfvars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/variables.tf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3DPHLKG9I7NDAoaE4PWeFdLtvOh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Aibar/Documents/Uni/Year 2/Trim3/Intro to SRE/Endterm",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b6cb09a-24fd-48fd-bf7b-4fc9fc5372df" name="Changes" comment="" />
+      <created>1778176730490</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778176730490</updated>
+      <workItem from="1778176732597" duration="1145000" />
+      <workItem from="1778577282330" duration="326000" />
+      <workItem from="1778830015194" duration="537000" />
+      <workItem from="1779002581279" duration="3814000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

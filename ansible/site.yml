@@ -1,0 +1,28 @@
+- name: Prepare nodes
+  hosts: all
+  become: true
+  tasks:
+    - name: Install docker and git
+      package:
+        name:
+          - docker
+          - git
+        state: present
+    - name: Enable docker
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+- name: Deploy stack
+  hosts: control
+  become: true
+  tasks:
+    - name: Copy project
+      copy:
+        src: ../
+        dest: /opt/sre-endterm
+    - name: Init swarm
+      shell: docker swarm init || true
+    - name: Deploy stack
+      shell: docker stack deploy -c /opt/sre-endterm/docker-compose.yml app
