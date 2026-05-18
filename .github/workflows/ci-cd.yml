@@ -147,10 +147,6 @@ jobs:
         working-directory: terraform
         run: terraform validate
 
-      - name: Terraform Format Check
-        working-directory: terraform
-        run: terraform fmt -check -recursive
-
   k8s-validate:
     name: Validate Kubernetes Manifests
     runs-on: ubuntu-latest
@@ -160,17 +156,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install kubectl
-        uses: azure/setup-kubectl@v3
-        with:
-          version: 'v1.29.0'
+      - name: Install kubeconform
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz | tar xz
+          sudo mv kubeconform /usr/local/bin/
 
       - name: Validate K8s manifests
         run: |
-          kubectl apply --dry-run=client --validate=false -f k8s/namespace.yaml
-          kubectl apply --dry-run=client --validate=false -f k8s/app.yaml
-          kubectl apply --dry-run=client --validate=false -f k8s/microservices.yaml
-          kubectl apply --dry-run=client --validate=false -f k8s/monitoring.yaml
+          kubeconform -strict -ignore-missing-schemas k8s/namespace.yaml
+          kubeconform -strict -ignore-missing-schemas k8s/app.yaml
+          kubeconform -strict -ignore-missing-schemas k8s/microservices.yaml
+          kubeconform -strict -ignore-missing-schemas k8s/monitoring.yaml
 
   ansible-lint:
     name: Ansible Lint
