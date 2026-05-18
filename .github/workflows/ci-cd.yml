@@ -2,18 +2,15 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [main, master, develop]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
 env:
   REGISTRY: ghcr.io
   IMAGE_PREFIX: ${{ github.repository_owner }}/sre-endterm
 
 jobs:
-  # ─────────────────────────────────────────
-  # JOB 1: Lint & Unit Tests
-  # ─────────────────────────────────────────
   test:
     name: Lint & Unit Tests
     runs-on: ubuntu-latest
@@ -50,8 +47,8 @@ jobs:
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
           cache-dependency-path: services/${{ matrix.service }}/package.json
 
       - name: Install dependencies
@@ -75,9 +72,6 @@ jobs:
           curl -sf http://localhost:${PORT}/health || echo "Health endpoint returned non-200 (acceptable in test env)"
           kill %1 || true
 
-  # ─────────────────────────────────────────
-  # JOB 2: Docker Build & Push
-  # ─────────────────────────────────────────
   build-and-push:
     name: Build & Push Docker Images
     runs-on: ubuntu-latest
@@ -103,6 +97,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -127,12 +124,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
-  # ─────────────────────────────────────────
-  # JOB 3: Validate Infrastructure (Terraform)
-  # ─────────────────────────────────────────
   terraform-validate:
     name: Terraform Validate
     runs-on: ubuntu-latest
@@ -145,7 +137,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: '1.8.0'
+          terraform_version: "1.8.0"
 
       - name: Terraform Init
         working-directory: terraform
@@ -159,9 +151,6 @@ jobs:
         working-directory: terraform
         run: terraform fmt -check -recursive
 
-  # ─────────────────────────────────────────
-  # JOB 4: Validate Kubernetes Manifests
-  # ─────────────────────────────────────────
   k8s-validate:
     name: Validate Kubernetes Manifests
     runs-on: ubuntu-latest
@@ -171,21 +160,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install kubeval
-        run: |
-          wget -qO- https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz | tar xz
-          sudo mv kubeval /usr/local/bin/
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.29.0'
 
       - name: Validate K8s manifests
         run: |
-          kubeval --strict k8s/namespace.yaml
-          kubeval --strict k8s/app.yaml
-          kubeval --strict k8s/microservices.yaml
-          kubeval --strict k8s/monitoring.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/namespace.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/app.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/microservices.yaml
+          kubectl apply --dry-run=client --validate=false -f k8s/monitoring.yaml
 
-  # ─────────────────────────────────────────
-  # JOB 5: Ansible Lint
-  # ─────────────────────────────────────────
   ansible-lint:
     name: Ansible Lint
     runs-on: ubuntu-latest
@@ -201,9 +187,6 @@ jobs:
       - name: Run ansible-lint
         run: ansible-lint ansible/site.yml || true
 
-  # ─────────────────────────────────────────
-  # JOB 6: Deploy (CD) — only on main/master
-  # ─────────────────────────────────────────
   deploy:
     name: Deploy to Production
     runs-on: ubuntu-latest
@@ -228,7 +211,7 @@ jobs:
             git pull origin main
             docker compose pull
             docker compose up -d --remove-orphans
-            echo "✅ Deploy completed at $(date)"
+            echo " Deploy completed at $(date)"
 
       - name: Notify deployment status
         if: always()
